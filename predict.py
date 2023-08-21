@@ -5,7 +5,11 @@ import time
 import pickle
 import argparse
 import torch
+import sys
 
+sys.path.append('./yolov7')
+
+from  yolov7.hubconf import custom
 from tools.model_load import attempt_load,Ensemble
 from tools.img_process import parse_boxes, img_preprocessing, draw_detections
 
@@ -48,7 +52,8 @@ print(f"Task is {opt.task}")
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')  
 
-region_proposal = torch.hub.load('WongKinYiu/yolov7','custom',region_proposal_path)  #region proposal (yolov7) load by torch.hub (it will be change)
+region_proposal = custom(path_or_model=region_proposal_path)
+# region_proposal = torch.hub.load('WongKinYiu/yolov7','custom',region_proposal_path)  #region proposal (yolov7) load by torch.hub (it will be change)
 region_proposal.conf = 0.01  # NMS confidence threshold                                                   
 # region_proposal.agnostic = True  # NMS class-agnostic
 region_proposal.eval()
@@ -117,3 +122,5 @@ for img_name in image_list:
     total_time += elapsedtime
 
 print(f'DONE\nwall time: {round(total_time,2)}s\naverage time: {round(total_time/len(image_list),4)}s FPS: {1/(total_time/len(image_list))}')
+
+sys.path.remove('./yolov7')

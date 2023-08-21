@@ -1,3 +1,0 @@
-./models/thermal_models/glasses.pt
-./models/thermal_models/head_detect.pt
-./models/thermal_models/face.pt

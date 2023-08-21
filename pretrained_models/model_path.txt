@@ -1,0 +1,2 @@
+./pretrained_models/thermal_models/glasses.pt
+./pretrained_models/thermal_models/head_detect.pt
