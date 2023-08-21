@@ -2,12 +2,12 @@
 
 ## Predict
 ```shell
-python .\predict.py -r .\pretrained_models\thermal_models\person.pt -c  .\pretrained_models\model_path.txt -l .\pretrained_models\thermal_models\log_model.pickle -s .\data\test_images\ -p .\runs\ -n exp
+python .\predict.py -r .\models\yolov7.pt -c  .\models\model_path.txt -l .\models\thermal_models\log_model.pickle -s .\data\test_images\ -p .\runs\ -n exp
 ```
 ## Train
 ### make dataset
 ```shell
-python .\predict.py -r .\pretrained_models\thermal_models\person.pt -c  .\pretrained_models\model_path.txt -s .\data\test_images\ --task save
+python .\predict.py -r .\models\yolov7.pt -c  .\models\model_path.txt -s .\data\test_images\ --task save
 ```
 ### labeling dataset
 ```shell

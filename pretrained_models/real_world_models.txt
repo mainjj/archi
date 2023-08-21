@@ -1,7 +1,0 @@
-./models/real_world_model/bird.pt
-./models/real_world_model/bird_legs.pt
-./models/real_world_model/dog-eye.pt
-./models/real_world_model/elephant.pt
-./models/real_world_model/muzzle.pt
-./models/real_world_model/pupil.pt
-./models/real_world_model/yolov7_tiny_head_75mAP.pt
